@@ -1,6 +1,7 @@
 package ran.ding.event;
 
 import org.springframework.context.ApplicationEvent;
+import org.springframework.stereotype.Component;
 /**
  * 自定义事件
  * @author maodou38
