@@ -2,10 +2,19 @@ package ran.ding.event;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import ran.ding.aop.AopConfig;
-import ran.ding.aop.DemoAnnotationService;
-import ran.ding.aop.DemoMethodService;
-
+/**
+ * springboot内置事件：
+ * ApplicationStartingEvent
+ * ApplicationEnvironmentPreparedEvent
+ * ApplicationPreparedEvent
+ * ApplicationStartedEvent
+ * ApplicationReadyEvent
+ * ApplicationFailedEvent
+ * 
+ * 
+ * @author maodou38
+ *
+ */
 public class Main {
 	public static void main(String[] args) {
 		AnnotationConfigApplicationContext context= new AnnotationConfigApplicationContext(EventConfig.class);
