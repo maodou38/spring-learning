@@ -33,6 +33,6 @@
 	</dependencyManagement>
 
 	<modules>
-		<module>spring-aop</module>
+		<module>spring</module>
 	</modules>
 </project>
