@@ -2,8 +2,6 @@ package ran.ding.multithreading;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import ran.ding.event.DemoPublisher;
-import ran.ding.event.EventConfig;
 
 public class Main {
 	public static void main(String[] args) {
