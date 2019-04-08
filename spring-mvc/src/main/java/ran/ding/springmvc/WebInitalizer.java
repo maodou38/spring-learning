@@ -10,7 +10,7 @@ import org.springframework.web.servlet.DispatcherServlet;
 
 public class WebInitalizer implements WebApplicationInitializer{
 
-	@Override
+	@Override  
 	public void onStartup(ServletContext servletContext) throws ServletException {
 		AnnotationConfigWebApplicationContext ctx=new AnnotationConfigWebApplicationContext();
 		ctx.register(MyMvcConfig.class);
