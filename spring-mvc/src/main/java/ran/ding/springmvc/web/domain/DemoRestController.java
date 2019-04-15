@@ -3,7 +3,7 @@ package ran.ding.springmvc.web.domain;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import ran.ding.springmvc.domain.DemoObj;
+import ran.ding.springmvc.entity.DemoObj;
 
 @RestController
 @RequestMapping("/rest")

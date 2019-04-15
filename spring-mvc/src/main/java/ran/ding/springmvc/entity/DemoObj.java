@@ -1,4 +1,4 @@
-package ran.ding.springmvc.domain;
+package ran.ding.springmvc.entity;
 
 public class DemoObj {
 	private Long id;
