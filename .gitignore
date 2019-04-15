@@ -24,7 +24,7 @@ hs_err_pid*
 
 #own
 target
-.gitignore
+#.gitignore
 .classpath
 .project
 .settings
