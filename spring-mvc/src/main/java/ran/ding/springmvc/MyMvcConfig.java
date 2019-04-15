@@ -11,6 +11,7 @@ import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
+import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
@@ -85,12 +86,12 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
 	public MyMessageConverter converter() {
 		return new MyMessageConverter();
 	}
-
+	//此方法只是追加converter
 	@Override
 	public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
 		MyMessageConverter converter = converter();
 		converters.add(converter);
-		//用于解决不在charset中配置utf-8
+		// 用于解决不在charset中配置utf-8
 		/*
 		 * for (Iterator iterator = converters.iterator(); iterator.hasNext();) {
 		 * HttpMessageConverter<?> httpMessageConverter = (HttpMessageConverter<?>)
@@ -100,6 +101,16 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
 		 * StringHttpMessageConverter( Charset.forName("UTF-8"));
 		 * stringHttpMessageConverter.setWriteAcceptCharset(false);
 		 * converters.add(stringHttpMessageConverter);
-		 */	
+		 */
 	}
+	/*
+	 * //使用此方法会将所有的spring自带converter都覆盖掉
+	 * 
+	 * @Override public void
+	 * configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+	 * StringHttpMessageConverter stringHttpMessageConverter = new
+	 * StringHttpMessageConverter( Charset.forName("UTF-8"));
+	 * stringHttpMessageConverter.setWriteAcceptCharset(false);
+	 * converters.add(stringHttpMessageConverter); }
+	 */
 }
