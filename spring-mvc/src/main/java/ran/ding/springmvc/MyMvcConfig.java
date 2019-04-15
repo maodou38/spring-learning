@@ -1,11 +1,13 @@
 package ran.ding.springmvc;
 
+import java.nio.charset.Charset;
 import java.util.List;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -52,6 +54,7 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter{
 		registry.addViewController("/index").setViewName("/index");
 		registry.addViewController("/toUpload").setViewName("/upload");//映射/toUpload到upload页面
 		registry.addViewController("/converter").setViewName("/converter");
+		registry.addViewController("/sse").setViewName("/sse");
 	}
 	//确保url中包含.不会产生截取，导致数据断截
 	@Override
